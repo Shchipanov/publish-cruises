@@ -1,0 +1,307 @@
+.booking {
+  position: relative;
+  background-color: $color-san-marino;
+  color: $color-default-black;
+  background-image: url("../img/background/booking-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: $vp-1024) {
+    @include retina {
+      background-image: url("../img/background/booking-desktop@2x.jpg");
+    }
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/background/booking-tablet.jpg");
+
+    @include retina {
+      background-image: url("../img/background/booking-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/background/booking-mobile.jpg");
+
+    @include retina {
+      background-image: url("../img/background/booking-mobile@2x.jpg");
+    }
+  }
+}
+
+.booking__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @include vp-1023 {
+    flex-direction: column;
+  }
+}
+
+.booking__description {
+  margin: 0 0 8px -9px;
+  display: inline-block;
+  vertical-align: middle;
+
+  @include vp-1023 {
+    margin: 88px 0 50px 0;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    margin: 58px 0 34px 0;
+  }
+}
+
+.booking__description h2 {
+  margin: 0 0 7px 0;
+
+  font-family: $ff-montserrat;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+  color: $color-tangaroa;
+
+  @include vp-1023 {
+    font-size: 34px;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+    line-height: 130%;
+    margin: 0 0 13px 0;
+  }
+}
+
+.booking__description p {
+  margin: 0;
+  max-width: 353px;
+
+  font-family: $ff-montserrat;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color-tangaroa;
+
+  @include vp-1023 {
+    font-size: 18px;
+    margin: 0 auto;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 140%;
+    max-width: 278px;
+  }
+}
+
+.booking__description p > br {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.booking__form {
+  padding: 43px 50px 51px;
+  margin: 50px -11px 50px 0;
+  max-width: 403px;
+  background-color: $color-tangaroa;
+  box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
+
+  @include vp-1023 {
+    margin: 0 0 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 34px 29px 40px;
+    margin: 0 0 66px 0;
+  }
+}
+
+.booking__form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking__form h3 {
+  margin: 0 0 28px 0;
+
+  font-family: $ff-montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color-alice-blue;
+
+  @include vp-767 {
+    line-height: 140%;
+    text-align: center;
+  }
+}
+
+.booking__form label {
+  width: 100%;
+}
+
+.booking__form input {
+  width: 100%;
+  max-width: 100%;
+  padding: 11px 16px;
+  margin: 0 0 20px 0;
+
+  font-family: $ff-montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-tangaroa;
+  background-color: $color-alice-blue;
+  border: none;
+
+  &::placeholder {
+    font-family: $ff-montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-placeholder;
+  }
+
+  &:hover {
+    background-color: $color-light-steel-blue;
+  }
+
+  &:active {
+    background-color: $color-alice-blue;
+    outline: 2px solid $color-light-steel-blue;
+  }
+
+  &:focus {
+    background-color: $color-alice-blue;
+    outline: none;
+  }
+
+  &:disabled {
+    color: $color-quartz;
+    background-color: $color-grey-suit;
+  }
+}
+
+.booking__checkbox {
+  position: relative;
+  display: inline-flex;
+}
+
+.booking__control-span {
+  margin: 2px 0 34px 23px;
+
+  font-family: $ff-montserrat;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 130%;
+  color: $color-alice-blue;
+  cursor: pointer;
+
+  @include vp-767 {
+    margin: -2px 0 27px 28px;
+    max-width: 156px;
+  }
+}
+
+.booking__control-mark {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: $color-alice-blue;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
+  @include vp-767 {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: $color-alice-blue;
+    outline: 2px solid $color-light-steel-blue;
+    outline-offset: -2px;
+  }
+
+  &:active {
+    background-color: $color-alice-blue;
+    outline: 2px solid $color-light-steel-blue;
+    outline-offset: -2px;
+  }
+
+  &:focus {
+    background-color: $color-alice-blue;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $color-grey-suit;
+  }
+}
+
+.booking__checkbox-input[type="checkbox"]:checked + .booking__control-mark::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/svg/checkbox.svg");
+  width: 12px;
+  height: 8px;
+  left: 3px;
+  top: 5px;
+
+  @include vp-767 {
+    left: 4px;
+    top: 6px;
+  }
+}
+
+.booking__form .booking__btn {
+  width: 100%;
+  justify-content: center;
+
+  font-family: $ff-montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-tangaroa;
+  background-color: $color-alice-blue;
+
+  &:hover {
+    background-color: $color-light-steel-blue;
+  }
+
+  &:active {
+    background-color: $color-alice-blue;
+    outline: 2px solid $color-light-steel-blue;
+    outline-offset: -2px;
+  }
+
+  &:focus {
+    background-color: $color-light-steel-blue;
+    outline: none;
+  }
+
+  &:disabled {
+    color: $color-quartz;
+    background-color: $color-grey-suit;
+  }
+}
+
+.booking__checkbox-input[type="checkbox"]:checked:active + .booking__control-mark::before {
+  background-color: $color-alice-blue;
+  outline: 2px solid $color-light-steel-blue;
+  outline-offset: -2px;
+}
+
+.booking__checkbox-input[type="checkbox"]:focus + .booking__control-mark {
+  background-color: $color-alice-blue;
+  outline: 2px solid $color-light-steel-blue;
+  outline-offset: -2px;
+}
