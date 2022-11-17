@@ -1,7 +1,4 @@
-.contacts__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.contacts {
   padding: 120px 0 113px 0;
 
   @include vp-1023 {
@@ -9,8 +6,17 @@
   }
 
   @include vp-767 {
-    flex-direction: column;
     padding: 44px 0 67px 0;
+  }
+}
+
+.contacts__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include vp-767 {
+    flex-direction: column;
   }
 }
 
@@ -111,12 +117,12 @@
 }
 
 .contacts__item {
-  padding: 0 0 0 28px;
   margin: 0 0 22px 0;
 }
 
 .contacts__link {
   position: relative;
+  padding: 0 0 0 28px;
 
   font-family: $ff-montserrat;
   font-weight: 400;
@@ -125,16 +131,16 @@
   color: $color-tangaroa;
 
   &:hover {
-    background-color: $color-light-steel-blue;
+    color: $color-grey-suit;
   }
 
   &:active {
-    background-color: $color-light-steel-blue;
+    color: $color-grey-suit;
   }
 
   &:focus {
     outline: none;
-    background-color: $color-light-steel-blue;
+    color: $color-grey-suit;
   }
 }
 
@@ -158,7 +164,7 @@
 .contacts__link svg {
   position: absolute;
   fill: $color-tangaroa;
-  left: -28px;
+  left: 0;
 
   @include vp-1023 {
     top: 3px;

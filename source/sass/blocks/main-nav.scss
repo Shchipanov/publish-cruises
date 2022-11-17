@@ -1,11 +1,15 @@
 .main-nav {
+  @include vp-767 {
+    z-index: 2;
+  }
+}
+
+
+.main-nav__wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  position: absolute;
-  right: 0;
-  left: 0;
 
   padding-top: 35px;
 
@@ -116,51 +120,60 @@
   }
 }
 
-.main-nav--opened {
-  @include vp-767 {
-    min-height: 568px;
-    align-items: flex-start;
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: inherit;
-    width: 89vw;
-    background-color: $color-alice-blue;
+.main-nav__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 43, 102, 0.5);
+  display: none;
+}
 
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: -25vw;
-      background: rgba(0, 43, 102, 0.5);
-      z-index: -1;
-    }
+.main-nav--opened .main-nav__wrapper {
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 35px;
+  background-color: $color-alice-blue;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-left: 15px;
+  display: block;
+}
+
+.main-nav--opened .main-nav__background {
+  @include vp-767 {
+    display: block;
+    z-index: 0;
   }
 }
 
 .main-nav--opened .main-nav__list {
   @include vp-767 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 26px;
-    position: absolute;
-    left: 15px;
-    top: 84px;
+    display: block;
+  }
+}
+
+.main-nav--opened .main-nav__item {
+  @include vp-767 {
+    display: block;
+    margin: 0 0 26px 0;
   }
 }
 
 .main-nav--opened .main-nav__logo {
   @include vp-767 {
-    margin-left: -1px;
+    margin: 0 0 42px 0;
   }
 }
 
 .main-nav--opened .main-nav__btn {
   @include vp-767 {
-    padding: 19px 26px;
+    padding: 19px 24px;
+    right: -4px;
   }
 }
 
@@ -197,31 +210,37 @@
   }
 }
 
-.main-nav--nojs {
+.main-nav--not-js {
   @include vp-767 {
     position: inherit;
-    align-items: flex-start;
     padding-bottom: 20px;
+    background-color: $color-alice-blue;
   }
 }
 
-.main-nav--nojs .main-nav__btn {
+.main-nav--not-js .main-nav__wrapper {
+  @include vp-767 {
+    align-items: flex-start;
+  }
+}
+
+.main-nav--not-js .main-nav__btn {
   @include vp-767 {
     display: none;
   }
 }
 
-.main-nav--nojs .main-nav__btn::before {
+.main-nav--not-js .main-nav__btn::before {
   @include vp-767 {
     display: none;
   }
 }
 
-.main-nav--nojs .main-nav__image {
+.main-nav--not-js .main-nav__image {
   fill: $color-tangaroa;
 }
 
-.main-nav--nojs .main-nav__list {
+.main-nav--not-js .main-nav__list {
   @include vp-767 {
     display: flex;
     flex-direction: column;
@@ -231,7 +250,7 @@
   }
 }
 
-.main-nav--nojs .main-nav__link {
+.main-nav--not-js .main-nav__link {
   @include vp-767 {
     font-size: 18px;
     line-height: 22px;

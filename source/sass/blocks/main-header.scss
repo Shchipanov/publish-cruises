@@ -1,5 +1,114 @@
 .main-header {
   position: relative;
-  width: 100%;
+
   z-index: 1;
+
+  @include vp-1023 {
+    box-shadow: none;
+  }
+
+  background-color: $color-san-marino;
+  color: $color-default-black;
+  background-image: url("../img/background/main-background-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: $color-shadow;
+
+  @media (min-width: $vp-1024) {
+    @include retina {
+      background-image: url("../img/background/main-background-desktop@2x.jpg");
+    }
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/background/main-background-tablet.jpg");
+
+    @include retina {
+      background-image: url("../img/background/main-background-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    background-image: url("../img/background/main-background-mobile.jpg");
+
+    @include retina {
+      background-image: url("../img/background/main-background-mobile@2x.jpg");
+    }
+  }
+}
+
+.main-header__title {
+  @include vp-767 {
+    z-index: 0;
+  }
+}
+
+.main-header__title--opened .main-header__title-wrapper {
+  @include vp-767 {
+    height: 500px;
+  }
+}
+
+.main-header__title--opened .main-header__title-wrapper > h2,
+.main-header__title--opened .main-header__title-wrapper > p {
+  @include vp-767 {
+    font-size: 0;
+  }
+}
+
+.main-header__title-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 197px 0 279px 8%;
+
+  @include vp-1023 {
+    padding: 216px 0 276px;
+  }
+
+  @include vp-767 {
+    padding: 134px 0 178px;
+  }
+}
+
+.main-header__title-wrapper h2 {
+  margin: 0 0 11px 0;
+  padding: 0;
+  font-family: $ff-montserrat;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 66px;
+  color: $color-alice-blue;
+  text-shadow: $color-shadow;
+
+  @include vp-1023 {
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  @include vp-767 {
+    font-size: 36px;
+    line-height: 125%;
+  }
+}
+
+.main-header__title-wrapper p {
+  margin: 0;
+  padding: 0;
+  font-family: $ff-montserrat;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-alice-blue;
+  text-shadow: $color-shadow;
+
+  @include vp-1023 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 140%;
+    max-width: 232px;
+  }
 }
