@@ -11,7 +11,11 @@ function closedMenu() {
       link.addEventListener('click', () => {
         navMain.classList.remove('main-nav--opened');
         removeScroll();
-        hideTile();
+        newFunction();
+
+        function newFunction() {
+          hideTile();
+        }
       });
     });
   } else {

@@ -7,6 +7,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @include vp-1023 {
+    padding: 0;
+  }
+
   @media (min-width: $vp-1024) {
     @include retina {
       background-image: url("../img/background/booking-desktop@2x.jpg");
