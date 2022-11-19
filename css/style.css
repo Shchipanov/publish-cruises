@@ -1859,6 +1859,10 @@ button,
   }
 
   .booking {
+    padding: 0;
+  }
+
+  .booking {
     background-image: url("../img/background/booking-tablet.jpg");
   }
 
