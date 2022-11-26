@@ -362,7 +362,7 @@
                 <h3>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</h3>
                 <div class="booking__input-wrapper">
                   <label for="name">
-                    <input type="text" name="your-name" placeholder="Имя" pattern="^[a-zA-ZA-Яа-яЁё]+$" id="name" required>
+                    <input type="text" name="your-name" placeholder="Имя" pattern="^[a-zA-ZA-Яа-яЁё\s\D [^0-9]]+$" id="name" required>
                   </label>
                   <label for="phone">
                     <input type="tel" id="phone" name="your-phone" placeholder="Телефон" data-phone minlength="10" pattern="8[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" required>
@@ -413,7 +413,7 @@
       <footer class="main-footer">
         <div class="main-footer__container container">
           <div class="main-footer__wrapper">
-          <a class="logo main-footer__logo">
+          <a class="logo main-footer__logo" href="#">
             <svg class="main-footer__image" aria-hidden="true" focusable="false" width="70" height="38">
               <use href="img/sprite.svg#cruises-logo"></use>
             </svg><span class="visually-hidden">Логотип туристического проекта “Круизы в Антарктику“.</span>
